@@ -2,18 +2,113 @@
   <head>
     <title>Form</title>
     <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/index.js"></script>
   </head>
-  <body style="background-color: #f8f8f8;">
+  <body style="background-color: #f8f8f8;" onload="load()">
     <div class="container mt-5">
       <div class="card">
-        <div class="card-body">
-          <form>
+        <div id="submission" class="card-body">
+          <form id="form">
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstname"
+                maxlength="40"
+                required
+                placeholder="Enter First Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input
+                type="text"
+                required
+                class="form-control"
+                maxlength="40"
+                id="lastname"
+                placeholder="Enter Last Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                id="address"
+                maxlength="40"
+                placeholder="Enter Address"
+              />
+              <a href="">View on Maps</a>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Date of Birth</label>
+              <input
+                type="date"
+                class="form-control"
+                id="dob"
+                placeholder="Enter Last Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Education Level</label>
+              <select class="form-control">
+                <option>High School</option>
+                <option>College</option>
+                <option>Graduate Studies</option>
+                <option>Ph.D</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Height</label>
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="feet"
+                    min="0"
+                    placeholder="Feet"
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="inches"
+                    min="0"
+                    max="11"
+                    placeholder="Inches"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                type="number"
+                class="form-control"
+                required
+                id="phone"
+                placeholder="Enter Phone no"
+              />
+            </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                required
+                id="email"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
               />
@@ -22,26 +117,53 @@
               >
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label for="confirmemail">Confirm Email address</label>
               <input
-                type="password"
+                type="email"
                 class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
+                required
+                id="confirmemail"
+                aria-describedby="emailHelp"
+                placeholder="Confirm email"
               />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
             </div>
+
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="" />
-                I agree to terms and agreement
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  required
+                />
+                I agree to terms
                 <span class="form-check-sign">
                   <span class="check"></span>
                 </span>
               </label>
             </div>
-
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Lcy_7EZAAAAAPwUFpZ7e4nVN788RBnDxVQyYYA1"
+            ></div>
+            <br />
             <button type="submit" class="btn btn-primary mt-2">Submit</button>
           </form>
+        </div>
+        <div id="submitted" class="card-body hide">
+          <h1 class="text-center">
+            <i
+              class="fa fa-check-circle text-center"
+              aria-hidden="true"
+              style="color: green;"
+            ></i>
+          </h1>
+          <h1 class="text-center">
+            Form Submitted
+          </h1>
         </div>
       </div>
     </div>
