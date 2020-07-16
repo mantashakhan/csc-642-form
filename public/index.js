@@ -1,11 +1,11 @@
-const load = () => {
-  const send = () => {
-    window.location.replace(
-      "https://www.google.com/maps/search/" +
-        document.getElementById("address").value
-    );
-  };
+const send = () => {
+  window.location.replace(
+    "https://www.google.com/maps/search/" +
+      document.getElementById("address").value
+  );
+};
 
+const load = () => {
   document.getElementById("form").onsubmit = (e) => {
     e.preventDefault();
 
