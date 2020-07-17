@@ -34,6 +34,8 @@ const load = () => {
 
       document.getElementById("addressResult").innerHTML =
         "Address: " + document.getElementById("address").value;
+      document.getElementById("zipResult").innerHTML =
+        "Zip Code: " + document.getElementById("zip").value;
 
       document.getElementById("dobResult").innerHTML =
         "Date of Birth: " + document.getElementById("dob").value;
