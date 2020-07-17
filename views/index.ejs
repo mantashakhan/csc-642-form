@@ -61,11 +61,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Education Level</label>
-              <select class="form-control">
-                <option>High School</option>
-                <option>College</option>
-                <option>Graduate Studies</option>
-                <option>Ph.D</option>
+              <select id="edu" class="form-control">
+                <option value="Hight School">High School</option>
+                <option value="College">College</option>
+                <option value="Graduate Studies">Graduate Studies</option>
+                <option value="Ph.D">Ph.D</option>
               </select>
             </div>
             <div class="form-group">
@@ -164,6 +164,20 @@
           <h1 class="text-center">
             Form Submitted
           </h1>
+        </div>
+      </div>
+      <div id="results" class="mt-3 card hide d-none">
+        <div class="card-body">
+          <h1 class="display-3 text-center">Results</h1>
+          <p id="firstnameResult" class="lead text-center">First Name: Ahmad</p>
+          <p id="lastnameResult" class="lead text-center">Last Name: Ahmad</p>
+          <p id="addressResult" class="lead text-center">Address: Ahmad</p>
+          <a href="#" onclick="send()">View on Maps</a>
+          <p id="dobResult" class="lead text-center">Date of Birth: Ahmad</p>
+          <p id="eduResult" class="lead text-center">Education Level: Ahmad</p>
+          <p id="heightResult" class="lead text-center">Height: Ahmad</p>
+          <p id="phoneResult" class="lead text-center">Phone: 1234567</p>
+          <p id="emailResult" class="lead text-center">Email Address: Ahmad</p>
         </div>
       </div>
     </div>
