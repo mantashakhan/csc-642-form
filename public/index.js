@@ -24,7 +24,7 @@ const load = () => {
     } else {
       document.getElementById("submission").classList += " hide";
       document.getElementById("submitted").classList = "card-body";
-      document.getElementById("results").classList = "mt-3 card";
+      document.getElementById("results").classList = "mt-3 mb-3 card";
 
       document.getElementById("firstnameResult").innerHTML =
         "Firstname: " + document.getElementById("firstname").value;
