@@ -218,7 +218,7 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
   var geocoder;
   var map;
   var address = "San Franscico, CA";
-  function initialize() {
+  function initialize(address) {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644);
     var myOptions = {
@@ -250,11 +250,8 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
                 infowindow.open(map,marker);
             });
 
-          } else {
-            alert("No results found");
-          }
-        } else {
-          alert("Geocode was not successful for the following reason: " + status);
+          } 
+          
         }
       });
     }
