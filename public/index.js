@@ -49,8 +49,11 @@ const load = () => {
       document.getElementById("dobResult").innerHTML =
         "Date of Birth: " + document.getElementById("dob").value;
 
+        
+        if(document.getElementById("edu").value.trim() !=="Select"){
       document.getElementById("eduResult").innerHTML =
         "Education Level: " + document.getElementById("edu").value;
+    }
       if (
         document.getElementById("feet").value.trim() !== "" &&
         document.getElementById("inches").value.trim() !== ""
