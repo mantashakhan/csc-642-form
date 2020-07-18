@@ -1,9 +1,18 @@
 const send = () => {
-  window.location.replace(
-    "https://www.google.com/maps/search/" +
-      document.getElementById("address").value
-  );
+  var windowName = 'userConsole'; 
+var popUp = window.open(window.location.replace(
+  "https://www.google.com/maps/search/" +
+    document.getElementById("address").value
+), windowName );
+if (popUp == null || typeof(popUp)=='undefined') {  
+    alert('Please disable your pop-up blocker and try again.'); 
+} 
+else {  
+    popUp.focus();
+}
 };
+
+
 
 const load = () => {
   document.getElementById("form").onsubmit = (e) => {
@@ -27,29 +36,29 @@ const load = () => {
       document.getElementById("results").classList = "mt-3 mb-3 card";
 
       document.getElementById("firstnameResult").innerHTML =
-        "Firstname: " + document.getElementById("firstname").value;
+        "First Name: " + document.getElementById("firstname").value;
 
       document.getElementById("lastnameResult").innerHTML =
-        "Lastname: " + document.getElementById("lastname").value;
+        "Last Name: " + document.getElementById("lastname").value;
 
       document.getElementById("addressResult").innerHTML =
         "Address: " + document.getElementById("address").value;
       document.getElementById("zipResult").innerHTML =
         "Zip Code: " + document.getElementById("zip").value;
-
+      
       document.getElementById("dobResult").innerHTML =
         "Date of Birth: " + document.getElementById("dob").value;
 
       document.getElementById("eduResult").innerHTML =
         "Education Level: " + document.getElementById("edu").value;
       if (
-        document.getElementById("feet").value !== "" &&
-        document.getElementById("inches").value !== ""
+        document.getElementById("feet").value.trim() !== "" &&
+        document.getElementById("inches").value.trim() !== ""
       ) {
         document.getElementById("heightResult").innerHTML =
           "Height: " +
           document.getElementById("feet").value +
-          " feet and " +
+          " feet and " +  
           document.getElementById("inches").value +
           " inches";
       }
