@@ -20,6 +20,11 @@ const load = () => {
 
     var phone = document.getElementById("phone");
     var email = document.getElementById("email");
+    var address= document.getElementById("address").value;
+    var zipCode = document.getElementById("zip").value;
+    var fullAddress = address + " " + zipCode;
+    initialize(fullAddress)
+    
     var confirmEmail = document.getElementById("confirmemail");
 
     if (phone.value < 0 || String(phone.value).length !== 7) {
